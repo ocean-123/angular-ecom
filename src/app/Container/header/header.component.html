@@ -1,0 +1,24 @@
+<div class="products-container">
+  <!-- Iterate over rows -->
+  <ng-container *ngFor="let row of data">
+    <div class="row">
+      <!-- Iterate over laptops in the row -->
+      <ng-container *ngFor="let product of row">
+        <mat-card class="card" (click)="buyProduct(product)">
+          <img mat-card-image [src]="product.imageSrc" />
+          <mat-card-header>
+            <mat-card-title>{{ product.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ product.description }}</p>
+          </mat-card-content>
+          <mat-card-content
+            [ngStyle]="{ color: product.price < 1500 ? 'green' : 'red' }"
+          >
+            <p>Price : {{ product.price }} $</p>
+          </mat-card-content>
+        </mat-card>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

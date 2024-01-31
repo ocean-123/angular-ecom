@@ -1,0 +1,70 @@
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  .mat-table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .mat-header-cell,
+  .mat-cell {
+    text-align: left;
+  }
+  
+  .mat-header-row,
+  .mat-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .mat-cell img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+  }
+  
+  .cart-summary {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .mat-divider {
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for the empty cart message */
+  p {
+    color: #777;
+  }
+  
+  /* Styles for the table header */
+  .mat-header-cell {
+    font-weight: bold;
+  }
+  
+  /* Styles for alternating row colors */
+  .mat-row:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  ng-template, p{
+    text-align: center;
+ 
+    
+  }
+.topchange {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  h2 {
+    margin: 0; /* Remove default margin */
+  }

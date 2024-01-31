@@ -1,0 +1,66 @@
+<div class="cart-container">
+  <div class="topchange">
+    <h2>Your Cart</h2>
+
+    <button mat-raised-button color="primary" (click)="addmore()">Add</button>
+    <button mat-raised-button color="warn" (click)="clearCart()">
+      Clear Cart
+    </button>
+  </div>
+
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <mat-table [dataSource]="cartItems" class="mat-elevation-z8">
+      <!-- Image Column -->
+      <ng-container matColumnDef="image">
+        <mat-header-cell *matHeaderCellDef> Image </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+          <img [src]="item.imageSrc" alt="{{ item.name }}" />
+        </mat-cell>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.name }} </mat-cell>
+      </ng-container>
+
+      <!-- Description Column -->
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+        <mat-cell *matCellDef="let item"> {{ item.description }} </mat-cell>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+        <mat-cell *matCellDef="let item"> Rs {{ item.price }} </mat-cell>
+      </ng-container>
+      <!-- Action Column -->
+      <!-- 
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let item">
+          <button mat-icon-button color="warn" (click)="deleteItems(item)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container> -->
+
+      <mat-header-row
+        *matHeaderRowDef="['image', 'name', 'description', 'price']"
+      ></mat-header-row>
+      <mat-row
+        *matRowDef="let row; columns: ['image', 'name', 'description', 'price']"
+      ></mat-row>
+    </mat-table>
+
+    <div class="cart-summary">
+      <mat-divider></mat-divider>
+      <p>Total Amount: Rs {{ calculateTotalAmount() }}</p>
+    </div>
+  </div>
+
+  <ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+  </ng-template>
+</div>

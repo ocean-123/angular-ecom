@@ -1,0 +1,62 @@
+<!-- login.component.html -->
+
+<div style="text-align: center">
+  <mat-card class="login-card" style="background-color: rgb(243, 245, 245)">
+    <mat-card-header style="display: contents">
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+
+    <form class="login-form" novalidate>
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input
+            style="text-align: center"
+            matInput
+            type="email"
+            id="email"
+            required
+            autocomplete="email"
+            placeholder="Enter Email"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            style="text-align: center"
+            matInput
+            type="password"
+            id="password"
+            required
+            autocomplete="current-password"
+            placeholder="Enter Password"
+            [type]="hide ? 'password' : 'text'"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+
+      <div class="form-group">
+        <button mat-raised-button color="" type="submit">Login</button>
+      </div>
+    </form>
+
+    <mat-card-actions>
+      <p style="text-decoration: underline">
+        Don't have an account?
+        <a href="/register" color="warn" mat-button>Sign Up</a>
+      </p>
+    </mat-card-actions>
+  </mat-card>
+</div>

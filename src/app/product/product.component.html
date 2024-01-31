@@ -1,0 +1,34 @@
+<div class="product-details-container">
+  <div class="product-image-container">
+    <img [src]="product.imageSrc" alt="Product Image" />
+  </div>
+  <div class="product-info-container">
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+    <mat-card-actions>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <div class="example-button-container">
+            <button mat-raised-button color="accent" (click)="addToCart()">
+              Add To Cart
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-raised-button color="primary" (click)="buyProduct()">
+              Buy
+            </button>
+
+            <!-- <button
+              mat-fab
+              color="accent"
+              aria-label="Example icon button with a bookmark icon"
+            >
+              <mat-icon>bookmark</mat-icon>
+            </button> -->
+          </div>
+        </div>
+      </div>
+      <span *ngIf="buyClicked">Thank you for buying!</span>
+    </mat-card-actions>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.login-card {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 100px;
+    
+    
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 0px;
+    width: 100%; /* Make the form groups full-width */
+}
+
+mat-form-field {
+  width: 80%; /* Make the input fields full-width */
+}
+
+input {
+  width: calc(100% - 32px); /* Adjusted width for the input fields */
+  /* The -32px is to compensate for the padding and border in the mat-form-field */
+  height: 10px; /* Adjusted height for t1e input fields */
+  line-height: 10px;
+}
+
+button {
+    width: 25%; /* Adjusted width for the button */
+    background-color: #4285f4; /* Google blue color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+  }
+  
+  button:hover {
+    background-color: #357ae8; /* Darker shade on hover */
+  }
